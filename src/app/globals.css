@@ -45,6 +45,55 @@ a { color: #007bff; text-decoration: none; }
   gap: 0.5rem;
 }
 
+/* ✅ 7. 헤더 우측 스타일 (신규 추가) */
+.nav-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* 아이템간 간격 */
+}
+
+/* 로그인 안했을 때 (우측) */
+.nav-login-button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  color: #007bff;
+  font-weight: 500;
+  border: 1px solid #007bff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.nav-login-button:hover {
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+}
+
+/* 로그인 했을 때 (우측) */
+.nav-user-email {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #343a40;
+  padding: 0.5rem 0.75rem;
+  background-color: #f1f3f5;
+  border-radius: 5px;
+}
+.nav-logout-button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  color: #dc3545; /* 빨간색 */
+  font-weight: 500;
+  border: 1px solid #dc3545;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit; /* 폰트 통일 */
+  font-size: 0.95em;
+  line-height: 1.4; /* 버튼 높이 맞춤 */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.nav-logout-button:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
 .nav-user-email {
   font-size: 0.9em;
   font-weight: 500;
