@@ -168,16 +168,16 @@ function formatExtractedData(type: string, data: any): { title: string; manual: 
 // ====================================================
 export async function POST(req: NextRequest) {
   try {
-    const { raw_text } = await req.json();
+    const { raw_text } = (await req.json()) as { raw_text: string };
     if (!raw_text) {
       return NextResponse.json({ error: 'raw_text required' }, { status: 400 });
     }
 
     // 1) 줄 단위로 분리
-    const lines = raw_text
+    const lines: string[] = raw_text
       .split(/\r?\n/)
-      .map(l => l.trim())
-      .filter(l => l.length > 0);
+      .map((l: string) => l.trim())
+      .filter((l: string) => l.length > 0);
 
     const allResults: { title: string; manual: string }[] = [];
 
