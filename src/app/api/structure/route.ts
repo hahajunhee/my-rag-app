@@ -11,7 +11,7 @@ async function classifyText(
   raw_text: string
 ): Promise<'PROCEDURE' | 'RULE' | 'RESPONSIBILITY' | 'REFERENCE' | 'COMMUNICATION'> {
   const prompt = `
-당신은 현대글로비스 북미포워딩 인수인계 데이터를 정리하는 전문가입니다.
+당신은 인수인계 데이터를 정리하는 전문가입니다.
 주어진 문장을 읽고, 아래 다섯 가지 중 가장 적합한 하나를 선택하세요.
 
 [카테고리 정의]
@@ -58,7 +58,7 @@ async function extractByType(
 ): Promise<any> {
   const promptMap: Record<string, string> = {
     PROCEDURE: `
-당신은 물류/포워딩 실무 매뉴얼 작성 전문가입니다.
+당신은 업무 및 실무 매뉴얼 작성 전문가입니다.
 아래 텍스트에서 '업무 절차' 또는 '작업 방법'을 찾아내어 JSON으로 정리하세요.
 
 [출력 형식]
